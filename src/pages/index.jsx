@@ -1,12 +1,16 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-const Home = lazy(() => import('pages/Home'));
+import HomePage from 'pages/HomePage';
+import QuizPage from 'pages/QuizPage';
+import ResultPage from 'pages/ResultPage';
 
 function MainRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/quiz" element={<QuizPage />} />
+      <Route path="/result" element={<ResultPage />} />
     </Routes>
   );
 }

@@ -18,17 +18,13 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
+    'prettier/prettier': 0,
     'no-alert': 'off',
     'react/prop-types': 0,
     'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': 'off',
     'jsx-a11y/no-autofocus': 0,
+    camelcase: 0,
   },
   settings: {
     'import/resolver': {
