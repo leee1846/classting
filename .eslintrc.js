@@ -25,6 +25,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'jsx-a11y/no-autofocus': 0,
     camelcase: 0,
+    'no-plusplus': 0,
   },
   settings: {
     'import/resolver': {

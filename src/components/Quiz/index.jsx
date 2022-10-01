@@ -30,13 +30,6 @@ function Quiz() {
   };
 
   const onNextQuiz = () => {
-    if (page >= 5) {
-      setTime({ key: 'endTime', value: new Date() });
-      navigate('/result');
-      return;
-    }
-
-    setPage((prev) => prev + 1);
     setResult({
       result: {
         ...currentQuiz,
@@ -44,6 +37,14 @@ function Quiz() {
       },
     });
     checkAnswer();
+
+    if (page >= 5) {
+      setTime({ key: 'endTime', value: new Date() });
+      navigate('/result');
+      return;
+    }
+
+    setPage((prev) => prev + 1);
     clearState();
   };
 
@@ -74,18 +75,17 @@ function Quiz() {
     if (quizzes.length < 1) {
       navigate('/');
     }
-  }, []);
+  }, [quizzes]);
 
   if (!currentQuiz || !answers) {
     return null;
   }
 
-  const { question } = currentQuiz;
   return (
     <main>
       <div>
         <p>문제 {page}번</p>
-        <p>{question}</p>
+        <p>{currentQuiz.question}</p>
       </div>
       <ul>
         {answers.map((answer, index) => (

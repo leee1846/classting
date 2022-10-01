@@ -23,6 +23,12 @@ const quizStore = create((set) => ({
       }),
     }));
   },
+  resetQuiz: () => {
+    set((state) => ({
+      ...state,
+      quizState: [],
+    }));
+  },
   setTime: ({ key, value }) => {
     set((state) => ({
       ...state,
