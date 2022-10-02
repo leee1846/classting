@@ -5,7 +5,7 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 
 am4core.useTheme(am4themes_animated);
 
-function Chart({ correct = 3, incorrect = 2 }) {
+function Chart({ correct, incorrect }) {
   useEffect(() => {
     const total = 5;
 
@@ -13,11 +13,13 @@ function Chart({ correct = 3, incorrect = 2 }) {
     chart.data = [
       {
         key: '정답',
-        value: (correct / total) * 100,
+        count: correct,
+        percentage: (correct / total) * 100,
       },
       {
         key: '오답',
-        value: (incorrect / total) * 100,
+        count: incorrect,
+        percentage: (incorrect / total) * 100,
       },
     ];
 
@@ -27,9 +29,10 @@ function Chart({ correct = 3, incorrect = 2 }) {
 
     const series = chart.series.push(new am4charts.ColumnSeries());
     series.name = `${total}`;
-    series.columns.template.tooltipText = '총문제수: {name}\n비율: {valueY}%';
+    series.columns.template.tooltipText =
+      '총문제수: {name}개\n{key}: {count}개\n비율: {valueY}%';
     series.columns.template.fill = am4core.color('dodgerblue');
-    series.dataFields.valueY = 'value';
+    series.dataFields.valueY = 'percentage';
     series.dataFields.categoryX = 'key';
     chart.cursor = new am4charts.XYCursor();
   }, []);

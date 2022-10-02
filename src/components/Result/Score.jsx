@@ -7,6 +7,7 @@ function Score({ takenTime, corrects, inCorrects }) {
       <p>소요시간 : {takenTime}</p>
       <p>정답 갯수 : {corrects.length}개</p>
       <p>오답 갯수 : {inCorrects.length}개</p>
+      <br />
     </div>
   );
 }

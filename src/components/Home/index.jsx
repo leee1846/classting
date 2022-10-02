@@ -6,6 +6,7 @@ import LoadingSpinner from 'components/Global/LoadingSpinner';
 
 function Home() {
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(false);
 
   const initQuiz = quizStore((store) => store.initQuiz);

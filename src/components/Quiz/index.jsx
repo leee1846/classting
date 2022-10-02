@@ -80,7 +80,6 @@ function Quiz() {
   if (!currentQuiz || !answers) {
     return null;
   }
-
   return (
     <main>
       <div>
