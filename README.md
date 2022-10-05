@@ -25,6 +25,7 @@
 ```
 React : 18.2.0
 react-router-dom : 6.4.1
+react-query : 3.39.2
 styled-components : 5.3.6
 zustand : 3.7.1
 amcharts/amcharts4 : 4.10.28
