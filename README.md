@@ -16,7 +16,8 @@
 |-- components { Global폴더를 제외한 page기준으로 폴더 구성된 components  }
 |-- constants { 재사용 상수 및 object }
 |-- globalState { 전역으로 관리되는 state }
-|-- pages { page기준으로 폴더가 구성된 page file }
+|-- pages { page file }
+|-- queryss { react-query 관리 함수 }
 |-- utils { util 함수 }
 ```
 
