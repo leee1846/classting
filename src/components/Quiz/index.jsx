@@ -3,6 +3,7 @@ import quizStore from 'globalState/quizStore';
 import { shuffle } from 'util/arrayUtil';
 import RadioBox from 'components/Global/RadioBox';
 import { useNavigate } from 'react-router-dom';
+import { CommonMessages } from 'constants/messages';
 
 function Quiz() {
   const navigate = useNavigate();
@@ -23,10 +24,10 @@ function Quiz() {
 
   const checkAnswer = () => {
     if (selectedAnswer === currentQuiz.correct_answer) {
-      window.alert('정답입니다.');
+      window.alert(CommonMessages.Correct);
       return;
     }
-    window.alert('오답입니다.');
+    window.alert(CommonMessages.InCorrect);
   };
 
   const onNextQuiz = () => {

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import quizStore from 'globalState/quizStore';
 import LoadingSpinner from 'components/Global/LoadingSpinner';
 import useGetQuiz from 'querys/quiz/useGetQuiz';
+import { CommonMessages } from 'constants/messages';
 
 function Home() {
   const navigate = useNavigate();
@@ -22,13 +23,13 @@ function Home() {
       navigate('/quiz');
     },
     onError: () => {
-      window.alert('에러가 발생하였습니다.\n고객센터에 문의 바랍니다.');
+      window.alert(CommonMessages.ErrorAlert);
     },
     enabled: false,
   });
 
   const navigateToQuiz = async () => {
-    if (window.confirm('퀴즈를 시작하시겠습니까?')) {
+    if (window.confirm(CommonMessages.StartQuiz)) {
       fetchQuiz().then();
     }
   };
