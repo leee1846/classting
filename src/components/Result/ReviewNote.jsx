@@ -11,6 +11,7 @@ function ReviewNote({ inCorrects }) {
             <p>{inCorrect.question}</p>
           </div>
           <p>정답 : {inCorrect.correct_answer}</p>
+          <br />
         </div>
       ))}
     </div>

@@ -30,7 +30,7 @@ function Chart({ correct, incorrect }) {
     const series = chart.series.push(new am4charts.ColumnSeries());
     series.name = `${total}`;
     series.columns.template.tooltipText =
-      '총문제수: {name}개\n{key}: {count}개\n비율: {valueY}%';
+      '총문제수: {name}\n{key}: {count}개\n비율: {valueY}%';
     series.columns.template.fill = am4core.color('dodgerblue');
     series.dataFields.valueY = 'percentage';
     series.dataFields.categoryX = 'key';

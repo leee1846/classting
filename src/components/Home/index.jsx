@@ -32,9 +32,12 @@ function Home() {
     return <LoadingSpinner />;
   }
   return (
-    <button type="button" onClick={navigateToQuiz}>
-      퀴즈 풀기
-    </button>
+    <>
+      <h1>클래스팅</h1>
+      <button type="button" onClick={navigateToQuiz}>
+        퀴즈 풀기
+      </button>
+    </>
   );
 }
 
